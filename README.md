@@ -1,4 +1,4 @@
- Lokal Music Player
+🎵 Lokal Music Player
 
 A mobile music streaming app built using React Native + Expo, featuring:
 
@@ -15,9 +15,10 @@ Smooth animations
 ✅ APK Download
 
 Download here:
-👉 [https://your-apk-link](https://expo.dev/accounts/vrahul2215s-organization/projects/lokal-music-player/builds/e793745e-c951-4eb6-a101-b17358cc70f7)
+👉 https://expo.dev/accounts/vrahul2215s-organization/projects/lokal-music-player/builds/e793745e-c951-4eb6-a101-b17358cc70f7
 
 🚀 Setup & Running Locally
+
 git clone https://github.com/<username>/lokal-music-player.git
 cd lokal-music-player
 npm install
@@ -29,6 +30,7 @@ To run on Android:
 press a
 
 🏗️ Architecture
+
 🔹 Tech Stack
 
 React Native (Expo SDK 50)
