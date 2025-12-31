@@ -1,105 +1,90 @@
-# How to Run the Music Player App
+ Lokal Music Player
 
-## Prerequisites
+A mobile music streaming app built using React Native + Expo, featuring:
 
-1. **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
-2. **npm** (comes with Node.js)
-3. **Expo CLI** (install globally):
-   ```bash
-   npm install -g expo-cli
-   ```
-4. **Expo Go app** on your mobile device:
-   - iOS: [App Store](https://apps.apple.com/app/expo-go/id982107779)
-   - Android: [Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
+Search songs
 
-## Step-by-Step Instructions
+Full player + mini player
 
-### 1. Install Dependencies
+Queue management
 
-Open terminal in the project directory and run:
+Background playback
 
-```bash
+Smooth animations
+
+✅ APK Download
+
+Download here:
+👉 [https://your-apk-link](https://expo.dev/accounts/vrahul2215s-organization/projects/lokal-music-player/builds/e793745e-c951-4eb6-a101-b17358cc70f7)
+
+🚀 Setup & Running Locally
+git clone https://github.com/<username>/lokal-music-player.git
+cd lokal-music-player
 npm install
-```
-
-This will install all required packages including:
-- React Native & Expo
-- Navigation libraries
-- State management (Zustand)
-- Storage (MMKV)
-- Audio playback (Expo AV)
-- And all other dependencies
-
-### 2. Start the Development Server
-
-```bash
-npm start
-```
-
-or
-
-```bash
-expo start
-```
-
-This will:
-- Start the Metro bundler
-- Display a QR code in the terminal
-- Open Expo DevTools in your browser
-
-### 3. Run on Your Device
-
-**Option A: Using Expo Go (Recommended for testing)**
-1. Open Expo Go app on your phone
-2. Scan the QR code displayed in the terminal
-3. The app will load on your device
-
-**Option B: Using Emulator/Simulator**
-
-For iOS (Mac only):
-```bash
-npm run ios
-# or
-expo start --ios
-```
-
-For Android:
-```bash
-npm run android
-# or
-expo start --android
-```
-
-**Option C: Using Web Browser**
-```bash
-npm run web
-# or
-expo start --web
-```
+npx expo start
 
 
+To run on Android:
 
-## Project Structure
+press a
+
+🏗️ Architecture
+🔹 Tech Stack
+
+React Native (Expo SDK 50)
+
+React Navigation → navigation + bottom tabs
+
+Expo AV → audio playback
+
+MMKV (or AsyncStorage) → persistent queue
+
+🔹 High-Level Flow
+
+1️⃣ User searches song
+2️⃣ On play:
+
+Queue is set
+
+Current song stored
+
+Player screen opens
+
+Mini player syncs automatically
+
+3️⃣ Audio engine handles:
+
+Play / Pause
+
+Seek
+
+Next / Previous
+
+Background play
+
+🔹 Project Structure
 
 ```
 lokal_assignment/
 ├── src/
-│   ├── components/      # MiniPlayer component
-│   ├── navigation/      # Navigation setup
-│   ├── screens/         # Home, Player, Queue screens
-│   ├── services/        # API & download services
-│   ├── store/           # Zustand state management
-│   ├── types/           # TypeScript types
-│   └── utils/           # Storage utilities
-├── App.tsx              # Root component
-├── package.json         # Dependencies
-└── tsconfig.json        # TypeScript config
-```
-
-## Notes
-
-- The app requires an internet connection for searching and streaming songs
-- Background playback is enabled - music continues when app is minimized
-- Queue and preferences are saved locally using MMKV
-- First run may take longer as dependencies are downloaded
-
+│   ├── components/          # Reusable components
+│   │   └── MiniPlayer.tsx   # Mini player component
+│   ├── context/             # React contexts
+│   ├── navigation/          # Navigation setup
+│   │   └── AppNavigator.tsx
+│   ├── screens/             # Screen components
+│   │   ├── HomeScreen.tsx  # Search and song list
+│   │   ├── PlayerScreen.tsx # Full player screen
+│   │   └── QueueScreen.tsx  # Queue management
+│   ├── services/            # API and external services
+│   │   ├── api.ts          # JioSaavn API integration
+│   │   └── downloadService.ts # Download functionality
+│   ├── store/              # State management
+│   │   └── usePlayerStore.ts # Zustand store
+│   ├── types/              # TypeScript types
+│   │   └── index.ts
+│   └── utils/              # Utility functions
+│       └── storage.ts     # MMKV storage utilities
+├── App.tsx                 # Root component
+├── package.json
+└── tsconfig.json
